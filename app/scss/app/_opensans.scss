@@ -1,0 +1,28 @@
+// font faces for custom fonts
+$openSansLocation: '../fonts/OpenSans/';
+$availableFonts:
+    'OpenSans'
+    'OpenSans-Bold'
+    'OpenSans-BoldItalic'
+    'OpenSans-Extrabold'
+    'OpenSans-ExtraboldItalic'
+    'OpenSans-Italic'
+    'OpenSans-Light'
+    'OpenSans-Semibold'
+    'OpenSans-SemiboldItalic'
+    'OpenSansLight-Italic';
+
+@each $value in $availableFonts {
+  @font-face {
+    font-family: $value;
+    src: url('#{$openSansLocation}#{$value}.eot');
+    src:
+      url('#{$openSansLocation}#{$value}.eot?#iefix') format('embedded-opentype'),
+      url('#{$openSansLocation}#{$value}.woff') format('woff'),
+      url('#{$openSansLocation}#{$value}.woff2') format('woff2'),
+      url('#{$openSansLocation}#{$value}.ttf') format('truetype'),
+      url('#{$openSansLocation}#{$value}.svg#OpenSans') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+}

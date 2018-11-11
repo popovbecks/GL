@@ -1,0 +1,56 @@
+{
+  "name": "gl_bench_test",
+  "version": "0.0.1",
+  "description": "This repo was created for checking knowledge of a candidate",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=dev webpack-dev-server --progress --colors true --hot --host 0.0.0.0 --port 8000",
+    "prod": "NODE_ENV=prod webpack --config webpack.production.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zadvornyi/bench_test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zadvornyi/bench_test/issues"
+  },
+  "dependencies": {
+    "angular": "^1.7.5",
+    "angular-animate": "^1.7.5",
+    "angular-resource": "^1.7.5",
+    "angular-sanitize": "^1.7.5",
+    "angular-touch": "^1.7.5",
+    "angular-ui-bootstrap": "^2.5.6",
+    "angular-ui-router": "^1.0.20",
+    "jquery": "^3.3.1",
+    "oclazyload": "^1.0.9"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "babel-loader": "^8.0.4",
+    "babel-plugin-add-module-exports": "^1.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "bootstrap-sass": "^3.3.6",
+    "compass-mixins": "^0.12.10",
+    "cross-env": "^5.2.0",
+    "css-loader": "^1.0.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "favicons-webpack-plugin": "0.0.9",
+    "file-loader": "^2.0.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "image-webpack-loader": "^4.3.1",
+    "node-sass": "^4.9.3",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.7"
+  },
+  "homepage": "https://github.com/Zadvornyi/bench_test#readme"
+}

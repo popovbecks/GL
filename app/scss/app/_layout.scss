@@ -1,0 +1,29 @@
+body {
+  position: relative;
+  font-family: "OpenSans";
+}
+.app-header {
+  background-color: $app-header-bg;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+  > span {
+    font-size: 20px;
+    color: #e35929;
+    margin: 0 60px 0 0;
+    vertical-align: middle;
+  }
+  .app-header-navbar {
+    display: inline-block;
+    vertical-align: middle;
+    .gl-nav-tab-d {
+      box-shadow: none;
+    }
+  }
+}
+.gl-logo {
+  background: url(../img/logo.svg) no-repeat;
+  margin: 8px 10px 0 20px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 180px;
+  height: 40px;
+}
