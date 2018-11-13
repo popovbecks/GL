@@ -3,6 +3,7 @@ function ModalInstanceCtrl($uibModalInstance, data) {
     pc.data = data;
     pc.change = function () {
         pc.uniq = pc.data.filter(item => item === pc.user.email);
+        console.log(pc.uniq);
     }
     pc.ok = function (item) {
         //{...}

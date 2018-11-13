@@ -120,6 +120,9 @@ h5 {
 .table td {
   background-color: white;
   color: gray;
+  line-height: 2.42857 !important;
+  vertical-align: middle !important;
+  border-top: 3px solid $body-color !important;
 }
 
 .label {
