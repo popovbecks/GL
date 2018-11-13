@@ -1,7 +1,79 @@
-<div class="container">
-  <h1>Accounts</h1>
-
-  <button type="button" class="btn btn-default" ng-click="acounts.open('sm')">Open me!</button>
-  <button type="button" class="btn btn-default" ng-click="acounts.open('md')">Large modal</button>
-  <button type="button" class="btn btn-default" ng-click="$ctrl.open('sm')">Small modal</button>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="sub-header">
+        <div class="sub-header_left">
+          <div class="sub-header_left_name">
+            <div class="sub-header_left_name_circle">
+              MI
+            </div>
+          </div>
+          <div class="sub-header_left_AD">
+            <div class="sub-header_left_AD_accounts">
+              <p>AD Accounts</p>
+            </div>
+            <div class="sub-header_left_AD_microsoft">
+              <p>Microsoft Corporation</p>
+            </div>
+          </div>
+        </div>
+        <div class="sub-header_right">
+          <button class="btn sub-header_right_btn" ng-click="acounts.open('md')"> Create Account</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="table-accounts">
+        <div class="table-accounts_nav">
+          <p>Number of AD Accounts: {{acounts.employees.length}}</p>
+        </div>
+        <table class="table table-hover">
+          <tr>
+            <th>Name</th>
+            <th>Account Name</th>
+            <th>E-mail</th>
+            <th>Creator</th>
+            <th>Status</th>
+            <th>Start Date</th>
+            <th>Expiration Date</th>
+            <th></th>
+            <th></th>
+          </tr>
+          <tr ng-repeat="account in acounts.employees">
+            <td class="name-td">{{account.name}}</td>
+            <td>{{account.account_name | lowercase}}</td>
+            <td>{{account.email}}</td>
+            <td>{{account.creator}}</td>
+            <td>
+              <span class="label" ng-class="{
+                'label-info': account.status ===  'Active',
+              'label-warning': account.status === 'Pending',
+              'label-default': account.status === 'Disable',
+            }">{{account.status}}</span>
+            </td>
+            <td>{{account.start_date | date:'dd MMMM yyyy'}}</td>
+            <td>{{account.expiration_date | date:'dd MMMM yyyy'}}</td>
+            <td><span class="glyphicon glyphicon-time" aria-hidden="true"></span></td>
+            <td>
+              <span uib-dropdown on-toggle="pc.toggled(open)">
+                <span class="glyphicon glyphicon-option-vertical dropdown-toggle" id="simple-dropdown"
+                  uib-dropdown-toggle>
+                </span>
+                <ul class="dropdown-menu-left" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                  <li>
+                    Reset Password
+                  </li>
+                  <li>
+                    <a ng-click="acounts.reset('md',account)">Disable Account</a>
+                  </li>
+                </ul>
+              </span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>

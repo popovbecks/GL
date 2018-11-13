@@ -28,4 +28,6 @@ require('./js/controllers/errorCtrl.js').default(ngModule);
 require('./js/controllers/appCtrl').default(ngModule);
 require('./js/controllers/accountsCtrl.js').default(ngModule);
 require('./js/controllers/ModalInstanceCtrl.js').default(ngModule);
-require('./js/controllers/serv.js').default(ngModule);
+require('./js/services/apiService.service').default(ngModule);
+require('./js/controllers/ModalForDelete.js').default(ngModule);
+require('./js/controllers/ModalForAcceptDelete.js').default(ngModule);

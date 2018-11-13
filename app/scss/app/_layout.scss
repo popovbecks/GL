@@ -1,24 +1,40 @@
 body {
   position: relative;
   font-family: "OpenSans";
+  padding: 0;
+  color: white;
+  background-color: $body-color;
 }
+
+h5 {
+  color: black;
+}
+
+.col-md-12 {
+  padding: 0;
+}
+
 .app-header {
   background-color: $app-header-bg;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
-  > span {
+
+  >span {
     font-size: 20px;
     color: #e35929;
     margin: 0 60px 0 0;
     vertical-align: middle;
   }
+
   .app-header-navbar {
     display: inline-block;
     vertical-align: middle;
+
     .gl-nav-tab-d {
       box-shadow: none;
     }
   }
 }
+
 .gl-logo {
   background: url(../img/logo.svg) no-repeat;
   margin: 8px 10px 0 20px;
@@ -26,4 +42,213 @@ body {
   vertical-align: middle;
   width: 180px;
   height: 40px;
+}
+
+.sub-header {
+  background: url(https://accounts.globallogic.com/login/cors/img/backgrounds/dashboard/47.jpg?1667d378f7f) no-repeat;
+  background-size: cover;
+  display: flex;
+  width: 100vw;
+  justify-content: space-between;
+  align-items: center;
+  height: $sub-header-height;
+  vertical-align: middle;
+  padding: 0 60px;
+}
+
+.sub-header_left {
+  display: flex;
+}
+
+.sub-header_left_name {
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+}
+
+.sub-header_left_name_circle {
+  padding: 12px;
+  background-color: $sub-header-circle-bg;
+  border-radius: 50%;
+  font-size: 24px;
+}
+
+.sub-header_left_AD_accounts p {
+  font-size: 22px;
+}
+
+.sub-header_left_AD_microsoft p {
+  font-size: 14px;
+  color: #848791;
+}
+
+.sub-header_right_btn {
+  background-color: $success-btn-color;
+  width: 125px;
+  display: block;
+}
+
+.table-accounts {
+  padding: 0 60px;
+  width: 100vw;
+}
+
+.name-td {
+  color: black !important;
+}
+
+.table-accounts_nav {
+  height: $app-header-height;
+  color: gray;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+}
+
+.table tr {
+  &:nth-child(2) td {
+    border-top: none;
+  }
+}
+
+.table th {
+  color: gray;
+  vertical-align: middle !important;
+  height: $app-header-height;
+}
+
+.table td {
+  background-color: white;
+  color: gray;
+}
+
+.label {
+  display: block;
+}
+
+//modal window for create account create
+.modal-create {
+  color: gray;
+  background-color: $body-color;
+  width: 100%;
+}
+
+.modal-create_form {
+  margin-bottom: 30px;
+
+}
+
+.modal-create_form_wrap {
+  padding: 15px;
+}
+
+.inputs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-control {
+  width: 100% !important;
+
+  &:first-child {
+    margin-right: 20px;
+  }
+
+}
+
+.name-inputs {
+  margin-bottom: 30px;
+}
+
+.modal-label {
+  margin-bottom: 25px;
+  color: black;
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  color: white;
+}
+
+.cancel-btn {
+  width: 125px;
+  background-color: $tooltip-bg;
+  margin-right: 5px;
+}
+
+input.ng-invalid {
+  border: 1px solid red;
+  color: red;
+}
+
+input.ng-pristine {
+  border: inherit;
+}
+
+.dropdown-menu-left {
+  left: -127px;
+  right: auto;
+  cursor: pointer;
+
+  & li:first-child {
+    padding-left: 20px;
+    background-color: rgb(241, 236, 236);
+  }
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+//delete modal
+.delete-modal_wrap {
+  padding: 20px;
+  color: black;
+  background: $body-color;
+}
+
+.delete-modal_cancel {
+  position: relative;
+  color: gray;
+}
+
+.decline {
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+}
+
+.modal-head {
+  padding: 10px 0;
+}
+
+.modal-notif p {
+  color: gray;
+}
+
+.button-group {
+  padding-bottom: 10px;
+}
+
+//accept modal
+
+.accept-modal_wrap {
+  background: #53BDBE;
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+}
+
+.accept-modal_text p {
+  margin: 0;
+  font-family: 'OpenSans-Light';
+}
+
+.closeModal {
+  cursor: pointer;
+}
+
+.modal-content {
+  border: none;
 }

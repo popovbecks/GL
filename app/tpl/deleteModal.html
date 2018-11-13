@@ -1,0 +1,15 @@
+<div class="delete-modal_wrap">
+    <div class="delete-modal_cancel">
+        <span ng-click="pc.decline()" class="glyphicon glyphicon-remove decline"></span>
+    </div>
+    <div class="modal-head">
+        <h3>Disable Account</h5>
+    </div>
+    <div class="modal-notif">
+        <p>Are you sure you want to disable account of {{pc.data.creator}}</p>
+    </div>
+    <div class="button-group">
+        <button class="btn cancel-btn" type="button" ng-click="pc.decline()">Cancel</button>
+        <button class="btn sub-header_right_btn" type="button" ng-click="pc.accept()">OK</button>
+    </div>
+</div>

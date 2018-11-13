@@ -1,0 +1,37 @@
+<div class="modal-create">
+    <div class="modal-create_form_wrap">
+        <div class="delete-modal_cancel">
+            <span ng-click="pc.cancel()" class="glyphicon glyphicon-remove decline"></span>
+        </div>
+        <h5>Create AD Account</h5>
+        <div class="modal-create_form">
+            <form name="addForm" class="form-inline">
+                <div class="name-inputs">
+                    <label>Name</label><br>
+                    <div class="inputs">
+                        <input type="text" name="name" ng-model="pc.user.name" class="form-control" placeholder="Name"
+                            required>
+                        <input type="text" name="lastName" ng-model="pc.user.lastName" class="form-control" placeholder="Last Name"
+                            required>
+                    </div>
+                </div>
+                <label class="modal-label">Account Name (generated automatically)</label>
+                <p class="modal-label">{{pc.user.accountName = pc.user.name + '.' + pc.user.lastName | lowercase}}</p>
+                <label>E-mail</label><br>
+                <input type="email" name="email" ng-change="pc.change()" ng-model="pc.user.email" class="form-control"
+                    id="inputEmail3" placeholder="user@company.com" required>
+                <span ng-show="addForm.email.$error.email" style="color: red; font-size: 12px;">Invalid email address.</span>
+                <span ng-show="pc.uniq.length" style="color: red; font-size: 12px;">* Account with such email already
+                    exist. If you can
+                    not find it on your list please contact IT Support</span>
+            </form>
+        </div>
+        <div class="button-group">
+            <button class="btn cancel-btn" type="button" ng-click="pc.cancel()">Cancel</button>
+            <button class="btn sub-header_right_btn" type="button" ng-disabled="addForm.$invalid || pc.uniq.length"
+                ng-click="pc.ok(pc.user)">OK</button>
+        </div>
+    </div>
+
+
+</div>
