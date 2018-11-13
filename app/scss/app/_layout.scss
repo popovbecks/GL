@@ -8,6 +8,8 @@ body {
 
 h5 {
   color: black;
+  font-size: 20px;
+  padding-bottom: 10px;
 }
 
 .col-md-12 {
@@ -142,7 +144,12 @@ h5 {
 }
 
 .modal-create_form_wrap {
-  padding: 15px;
+  padding: 25px;
+
+  & input {
+    border: 1px solid gray !important;
+    border-radius: 0% !important;
+  }
 }
 
 .inputs {
@@ -164,8 +171,8 @@ h5 {
 }
 
 .modal-label {
-  margin-bottom: 25px;
-  color: black;
+  margin-bottom: 20px;
+  color: gray;
 }
 
 .button-group {
