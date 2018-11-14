@@ -30,7 +30,6 @@ function AccountsCtrl($uibModal, $log, apiService) {
     }
     pc.checkForAccountMatches = function (creator, accountName) {
         var result = pc.accountsNames.filter(item => item === creator);
-        console.log(result)
         return result.length ? accountName + result.length : accountName;
     };
     pc.date = new Date();
@@ -61,9 +60,12 @@ function AccountsCtrl($uibModal, $log, apiService) {
 
         modalInstance.result.then(function (item) {
             return pc.addEmployeeToDb(item);
-        }).then(items => pc.getEmployeesFromApi())
+        }).then(items => {
+            pc.getEmployeesFromApi();
+            pc.acceptDelete('md', items.data, true)
+        })
     };
-    pc.reset = function (size, account) {
+    pc.reset = function (size, account, flag) {
         var modalForResetInstance = $uibModal.open({
             animation: true,
             template: resetModalTemplate,
@@ -72,18 +74,21 @@ function AccountsCtrl($uibModal, $log, apiService) {
             size: size,
             resolve: {
                 data: function () {
-                    return account;
+                    return {
+                        data: account,
+                        flag: flag
+                    };
                 }
             }
         });
 
         modalForResetInstance.result.then(function (item) {
             pc.disableAccount(item);
-            pc.acceptDelete('md', item);
+            pc.acceptDelete('md', item, false);
 
         })
     };
-    pc.acceptDelete = function (size, account) {
+    pc.acceptDelete = function (size, account, flag) {
         var modalForAcceptDelete = $uibModal.open({
             animation: true,
             template: acceptDeleteModalTemplate,
@@ -92,7 +97,10 @@ function AccountsCtrl($uibModal, $log, apiService) {
             size: size,
             resolve: {
                 data: function () {
-                    return account;
+                    return {
+                        data: account,
+                        flag: flag
+                    };
                 }
             }
         });

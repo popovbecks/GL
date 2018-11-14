@@ -1,6 +1,6 @@
 function ModalForDelete($uibModalInstance, data) {
     var pc = this;
-    pc.data = data;
+    pc.data = data.data;
     pc.accept = function () {
         $uibModalInstance.close(pc.data);
     };
