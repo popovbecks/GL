@@ -1,6 +1,7 @@
 <div class="accept-modal_wrap">
     <div class="accept-modal_text">
-        <p>{{pc.data.creator + ' ' + 'has been disabled'}}</p>
+        <p ng-if="!pc.flag">{{pc.data.creator + ' ' + 'has been disabled'}}</p>
+        <p ng-if="pc.flag">New account created for {{pc.data.creator}}</p>
     </div>
     <div class="accept-modal_close">
         <span ng-click="pc.closeModal()" class="glyphicon glyphicon-remove closeModal"></span>
