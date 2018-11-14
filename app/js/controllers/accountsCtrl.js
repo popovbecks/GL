@@ -1,7 +1,7 @@
 var addModalTemplate = require('../../tpl/createModal.html');
 var resetModalTemplate = require('../../tpl/deleteModal.html');
 var acceptDeleteModalTemplate = require('../../tpl/acceptDeleteModal.html');
-import ModalInstanceCtrl from './ModalInstanceCtrl'
+//import ModalInstanceCtrl from './ModalInstanceCtrl'
 
 function AccountsCtrl($uibModal, $log, apiService) {
 
