@@ -25,18 +25,19 @@ function AccountsCtrl($uibModal, $log, apiService) {
 
         }).then(items => {
             pc.data = items.map(accounts => accounts.email);
-            pc.accountsNames = items.map(accounts => accounts.account_name);
+            pc.accountsNames = items.map(accounts => accounts.creator);
         }).catch(error => console.log('Something was happend with error status ' + error.status));
     }
-    pc.checkForAccountMatches = function (accountName) {
-        var result = pc.accountsNames.filter(item => item == accountName);
+    pc.checkForAccountMatches = function (creator, accountName) {
+        var result = pc.accountsNames.filter(item => item === creator);
+        console.log(result)
         return result.length ? accountName + result.length : accountName;
     };
     pc.date = new Date();
     pc.addEmployeeToDb = function (emp) {
         return apiService.addAccount({
             name: emp.name,
-            account_name: pc.checkForAccountMatches(emp.accountName),
+            account_name: pc.checkForAccountMatches(emp.name + ' ' + emp.lastName, emp.accountName),
             email: emp.email,
             creator: emp.name + ' ' + emp.lastName,
             status: "Active",
